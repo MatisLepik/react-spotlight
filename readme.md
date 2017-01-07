@@ -41,7 +41,7 @@ Source code can be found in the `example/src/Demo.js`.
 |animSpeed (*number*) = 500|Transition speed when changing coordinates. You can control this manually with CSS if you want - but be sure to change it for both the outer and inner container.|
 |borderColor (*string*) = 'white'|Color of the circle's border|
 |borderWidth (*number*) = 0|Width of the circle's border|
-|responsive (*boolean*) = true|Certain values depend on cached viewport size for performance. Turning this off might result in buggy behaviour if the screen is resized.|
+|responsive (*boolean*) = true|Certain values depend on cached viewport size for performance, so we listen to a (throttled) resize event to recalculate values. Turning this off might result in buggy behaviour if the screen is resized.|
 |outerClass|Class name for the outer container|
 |innerClass|Class name for the inner container|
 |children|You can render children into the inner container, but you will have to position them yourself.|
