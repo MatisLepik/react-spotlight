@@ -1,0 +1,11 @@
+src
+test
+example
+.babelrc
+.eslintrc
+.editorconfig
+.flowconfig
+.git
+coverage
+npm-debug.log
+yarn.lock

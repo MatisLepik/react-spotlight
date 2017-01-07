@@ -1,0 +1,4 @@
+--require test/utils/setup.js
+--require test/utils/dom.js
+--require expect
+--reporter nyan

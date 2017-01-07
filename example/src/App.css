@@ -1,0 +1,52 @@
+.site-header {
+    text-align: left;
+    padding: 50px 0;
+    color: white;
+    background-color: #1976d2;
+}
+
+.site-header p {
+    font-size: 32px;
+    opacity: 0.8;
+}
+
+.site-header h1 {
+    font-size: 52px;
+    margin-top: 0;
+}
+
+.github-bar {
+    background-color: #ddd;
+    padding: 25px 0;
+}
+
+.github-bar-content > * {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.github-bar code {
+    background-color: #c5c5c6;
+}
+
+.usage h2 {
+    margin-top: 45px;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
+}

@@ -1,0 +1,36 @@
+{
+    "extends": "@optimistdigital/eslint-config-rules",
+    "parser": "babel-eslint",
+    "env": {
+        'node': true,
+        'browser': true,
+        'mocha': true,
+        'es6': true
+    },
+    "plugins": [ 'import', 'react' ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": ['.js', '.jsx', '.json']
+            },
+            "paths": ['src'],
+            "moduleDirectory": ['src', 'node_modules']
+        },
+        "react": {
+            "pragma": 'React',
+            "version": '0.14'
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": 'module',
+        "ecmaFeatures": {
+            "generators": false,
+            "objectLiteralDuplicateProperties": false,
+            "jsx": true
+        }
+    },
+    "ecmaFeatures": {
+        "jsx": true
+    }
+}
