@@ -1,6 +1,6 @@
 {
   "name": "react-spotlight",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Highlight an area on your page by dimming the rest of the content.",
   "main": "./dist/index.js",
   "scripts": {
