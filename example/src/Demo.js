@@ -1,5 +1,5 @@
 import React from 'react';
-import HighlightArea from '../../dist/index';
+import Spotlight from '../../dist/index';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 export default class Demo extends React.Component {
@@ -62,7 +62,7 @@ export default class Demo extends React.Component {
           transitionLeaveTimeout={300}>
           {this.state.playing && (
             <div key="1">
-              <HighlightArea
+              <Spotlight
                 x={this.state.x}
                 y={this.state.y}
                 radius={this.state.radius}
@@ -80,7 +80,7 @@ export default class Demo extends React.Component {
                 }}>
                   <h1 style={{ margin: 0 }}>{this.state.text}</h1>
                 </div>
-              </HighlightArea>
+              </Spotlight>
             </div>
           )}
         </ReactCSSTransitionGroup>

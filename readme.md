@@ -1,4 +1,4 @@
-# React Highlight Area
+# React Spotlight
 
 This component covers the page with an overlay, only showing around coordinates that you choose. You can change the coordinates and the circle will animate to the onew ones. This could be used to dynamically introduce parts of a website to the user, or create more complex interactive experiences.
 
@@ -11,13 +11,13 @@ Source code can be found in the `example/src/Demo.js`.
 ### Example (pixel coordinates):
 
 ```
-<HighlightArea x={550} y={325} />
+<Spotlight x={550} y={325} />
 ```
 
 ### Example (percentage):
 
 ```
-<HighlightArea
+<Spotlight
   x={50}
   y={25}
   color="#d74793"

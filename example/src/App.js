@@ -19,7 +19,7 @@ class App extends Component {
       <div>
         <header className="site-header">
           <div className="maxwidth-wrapper">
-            <h1>React Highlight Area</h1>
+            <h1>React Spotlight</h1>
             <p>Highlight an area on your page by dimming the rest of the content.</p>
             <Demo />
           </div>
@@ -35,12 +35,12 @@ class App extends Component {
         <main className="usage maxwidth-wrapper">
           <h2>Basic example</h2>
           <code className="code-block" dangerouslySetInnerHTML={{ __html: `
-<span class="source js jsx"><span class="meta tag jsx"><span class="punctuation definition tag jsx">&lt;</span><span class="entity name tag open jsx"><span class="support class component open jsx">HighlightArea</span></span><span class="JSXAttrs"> <span class="entity other attribute-name jsx">x</span><span class="keyword operator assignment jsx">=</span><span class="meta embedded expression js"><span class="punctuation section embedded begin jsx">{</span><span class="source js jsx"><span class="constant numeric js">350</span></span><span class="punctuation section embedded end jsx">}</span></span> <span class="entity other attribute-name jsx">y</span><span class="keyword operator assignment jsx">=</span><span class="meta embedded expression js"><span class="punctuation section embedded begin jsx">{</span><span class="source js jsx"><span class="constant numeric js">25</span></span><span class="punctuation section embedded end jsx">}</span></span> </span><span class="punctuation definition tag jsx">/&gt;</span></span></span>
+<span class="source js jsx"><span class="meta tag jsx"><span class="punctuation definition tag jsx">&lt;</span><span class="entity name tag open jsx"><span class="support class component open jsx">Spotlight</span></span><span class="JSXAttrs"> <span class="entity other attribute-name jsx">x</span><span class="keyword operator assignment jsx">=</span><span class="meta embedded expression js"><span class="punctuation section embedded begin jsx">{</span><span class="source js jsx"><span class="constant numeric js">350</span></span><span class="punctuation section embedded end jsx">}</span></span> <span class="entity other attribute-name jsx">y</span><span class="keyword operator assignment jsx">=</span><span class="meta embedded expression js"><span class="punctuation section embedded begin jsx">{</span><span class="source js jsx"><span class="constant numeric js">25</span></span><span class="punctuation section embedded end jsx">}</span></span> </span><span class="punctuation definition tag jsx">/&gt;</span></span></span>
           ` }} />
 
           <h2>With all props</h2>
           <code className="code-block" dangerouslySetInnerHTML={{ __html: `
-            &lt;HighlightArea<br />
+            &lt;Spotlight<br />
               &nbsp;&nbsp;x={50}<br />
               &nbsp;&nbsp;y={25}<br />
               &nbsp;&nbsp;color=&quot;#d74793&quot;<br />

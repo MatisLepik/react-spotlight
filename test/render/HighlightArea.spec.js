@@ -1,17 +1,17 @@
 import expect from 'expect';
-import HighlightArea from '../../dist/index';
+import Spotlight from '../../dist/index';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
-describe('Highlight area', () => {
+describe('Spotlight', () => {
   it('Should render without blowing up', () => {
-    const component = TestUtils.renderIntoDocument( <HighlightArea /> );
+    const component = TestUtils.renderIntoDocument( <Spotlight /> );
     expect(component).toExist();
   });
 
   it('Should add correct classes and styles', () => {
-    const component = TestUtils.renderIntoDocument( <HighlightArea outerClass="outer" innerClass="inner" /> );
+    const component = TestUtils.renderIntoDocument( <Spotlight outerClass="outer" innerClass="inner" /> );
     const outer = TestUtils.findRenderedDOMComponentWithClass(component, 'outer');
     const inner = outer.querySelector('.inner');
 
@@ -33,8 +33,8 @@ describe('Highlight area', () => {
     window.innerWidth = 1920;
     window.innerHeight = 1080;
 
-    const component1 = TestUtils.renderIntoDocument( <HighlightArea radius={150} outerClass="outer" innerClass="inner" /> );
-    const component2 = TestUtils.renderIntoDocument( <HighlightArea radius={25} outerClass="outer" innerClass="inner" /> );
+    const component1 = TestUtils.renderIntoDocument( <Spotlight radius={150} outerClass="outer" innerClass="inner" /> );
+    const component2 = TestUtils.renderIntoDocument( <Spotlight radius={25} outerClass="outer" innerClass="inner" /> );
     const inner1 = TestUtils.findRenderedDOMComponentWithClass(component1, 'inner');
     const inner2 = TestUtils.findRenderedDOMComponentWithClass(component2, 'inner');
 
@@ -45,8 +45,8 @@ describe('Highlight area', () => {
     window.innerWidth = 800;
     window.innerHeight = 600;
 
-    const component3 = TestUtils.renderIntoDocument( <HighlightArea radius={150} outerClass="outer" innerClass="inner" /> );
-    const component4 = TestUtils.renderIntoDocument( <HighlightArea radius={25} outerClass="outer" innerClass="inner" /> );
+    const component3 = TestUtils.renderIntoDocument( <Spotlight radius={150} outerClass="outer" innerClass="inner" /> );
+    const component4 = TestUtils.renderIntoDocument( <Spotlight radius={25} outerClass="outer" innerClass="inner" /> );
     const inner3 = TestUtils.findRenderedDOMComponentWithClass(component3, 'inner');
     const inner4 = TestUtils.findRenderedDOMComponentWithClass(component4, 'inner');
 

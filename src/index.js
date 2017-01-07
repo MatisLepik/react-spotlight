@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class HighlightArea extends React.Component {
+export default class Spotlight extends React.Component {
 
   constructor(props) {
     super(props);
@@ -110,7 +110,7 @@ export default class HighlightArea extends React.Component {
   }
 }
 
-HighlightArea.propTypes = {
+Spotlight.propTypes = {
   color: React.PropTypes.string,
   x: React.PropTypes.number,
   y: React.PropTypes.number,
@@ -124,7 +124,7 @@ HighlightArea.propTypes = {
   usePercentage: React.PropTypes.bool
 };
 
-HighlightArea.defaultProps = {
+Spotlight.defaultProps = {
   color: 'black',
   x: 50,
   y: 50,
