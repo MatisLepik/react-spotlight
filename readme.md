@@ -8,6 +8,16 @@ Live demo: https://www.matislepik.com/react-spotlight/
 
 Source code can be found in the `example/src/Demo.js`.
 
+### Installation
+
+You can install the component through NPM:
+
+`yarn add react-spotlight` or `npm install react-spotlight --save`
+
+Then import it in your code:
+
+`import Spotlight from 'react-spotlight';`
+
 ### Example (pixel coordinates):
 
 ```
