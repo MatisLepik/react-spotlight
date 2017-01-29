@@ -1,6 +1,6 @@
 import React from 'react';
 import Spotlight from '../../dist/index';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class Demo extends React.Component {
 
