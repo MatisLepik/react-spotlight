@@ -1,6 +1,6 @@
 # React Spotlight
 
-This component covers the page with an overlay, only showing around coordinates that you choose. You can change the coordinates and the circle will animate to the onew ones. This could be used to dynamically introduce parts of a website to the user, or create more complex interactive experiences.
+This component covers the page with an overlay, only showing around coordinates that you choose. You can change the coordinates and the circle will animate to the new ones. This could be used to dynamically introduce parts of a website to the user, or create more complex interactive experiences.
 
 ## Usage
 
@@ -18,14 +18,19 @@ Then import it in your code:
 
 `import Spotlight from 'react-spotlight';`
 
-### Example (pixel coordinates):
+### Basic example (pixel coordinates):
+Renders a spotlight at `x: 350px` `y: 25px`
 
 ```
-<Spotlight x={550} y={325} />
+// At top of file
+import Spotlight from 'react-spotlight';
+
+// In render method
+<Spotlight x={350} y={25} />
 ```
 
 ### Example (percentage):
-
+Renders a spotlight at `x: 50%` `y: 25%`. You can add text content inside the circle, but you'll have to style it yourself.
 ```
 <Spotlight
   x={50}
@@ -36,8 +41,21 @@ Then import it in your code:
   usePercentage
   animSpeed={1000}
   borderColor="#ddd"
-  borderWidth={5} />
+  borderWidth={5}>
+  <div style={{
+    position: 'absolute',
+    left: '50%',
+    top: '-50px',
+    transform: 'translate(-50%, -100%)',
+    whiteSpace: 'nowrap'
+  }}>
+    <h1>Text content</h1>
+  </div>
+</Spotlight>
 ```
+
+### Animating
+You can change the `x` / `y` / `color` / `borderColor` variables dynamically and the spotlight will animate to the new size / position / colors. Radius can also be animated, but this is laggy because it changes the CSS width/height values.
 
 ### PropTypes
 
@@ -45,7 +63,7 @@ Then import it in your code:
 |---|---|
 |x (*number*) = 50|Center of the circle. Pixels or percentage, depending on `usePercentage` value|
 |y (*number*) = 50|Center of the circle. Pixels or percentage, depending on `usePercentage` value|
-|radius (*number*) = 100|Radius of the circle|
+|radius (*number*) = 100|Radius of the circle. Avoid changing this dynamically because css transitions on width/height are laggy.|
 |color (*string*) = 'black'|Color of the overlay|
 |usePercentage (*boolean*) = false|By default, the coordinates are interpreted as pixels. This causes them to be interpreted as percentage of the viewport.|
 |animSpeed (*number*) = 500|Transition speed when changing coordinates. You can control this manually with CSS if you want - but be sure to change it for both the outer and inner container.|
