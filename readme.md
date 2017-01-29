@@ -18,7 +18,7 @@ Then import it in your code:
 
 `import Spotlight from 'react-spotlight';`
 
-### Basic example (pixel coordinates):
+### Basic example:
 Renders a spotlight at `x: 350px` `y: 25px`
 
 ```
@@ -29,7 +29,7 @@ import Spotlight from 'react-spotlight';
 <Spotlight x={350} y={25} />
 ```
 
-### Example (percentage):
+### Example with all props:
 Renders a spotlight at `x: 50%` `y: 25%`. You can add text content inside the circle, but you'll have to style it yourself.
 ```
 <Spotlight
