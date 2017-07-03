@@ -1,6 +1,6 @@
 {
-  "name": "react-spotlight",
-  "version": "1.0.3",
+  "name": "react-spotlight-clickable",
+  "version": "1.0.4",
   "description": "Highlight an area on your page by dimming the rest of the content.",
   "main": "./dist/index.js",
   "scripts": {
@@ -43,5 +43,8 @@
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }

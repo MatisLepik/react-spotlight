@@ -54,6 +54,25 @@ Renders a spotlight at `x: 50%` `y: 25%`. You can add text content inside the ci
 </Spotlight>
 ```
 
+If you want to make whatever is behind the spotlight circle clickable just set zIndex to 0:
+
+e.x.
+```
+<Spotlight
+  x={50}
+  y={25}
+  color="#d74793"
+  radius={100}
+  responsive
+  usePercentage
+  animSpeed={1000}
+  borderColor="#ddd"
+  borderWidth={5}
+  zIndex={o}>
+
+</Spotlight>
+```
+
 ### Animating
 You can change the `x` / `y` / `color` / `borderColor` variables dynamically and the spotlight will animate to the new size / position / colors. Radius can also be animated, but this is laggy because it changes the CSS width/height values.
 
@@ -73,6 +92,7 @@ You can change the `x` / `y` / `color` / `borderColor` variables dynamically and
 |outerClass|Class name for the outer container|
 |innerClass|Class name for the inner container|
 |children|You can render children into the inner container, but you will have to position them yourself.|
+|zIndex (*number*) = 999| zIndex of the spotlight circle. If changed whatever is behind it will be clickable. In other words, it will render in front of the spotligth.|
 
 ## Development
 

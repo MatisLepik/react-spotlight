@@ -82,7 +82,6 @@ export default class Spotlight extends React.Component {
   getOuterStyles() {
     const { animSpeed, borderWidth, borderColor, radius, zIndex } = this.props;
     const diameter = radius * 2;
-    const zIndexNumber = zIndex ? zIndex : 999;
 
     return {
       position: 'fixed',
@@ -91,7 +90,7 @@ export default class Spotlight extends React.Component {
       width: diameter,
       height: diameter,
       borderRadius: '50%',
-      zIndex: zIndexNumber,
+      zIndex: zIndex,
       boxSizing: 'content-box',
       border: `${borderWidth}px solid ${borderColor}`,
       transform: `translate(${this.getX()}, ${this.getY()})`,
@@ -136,5 +135,6 @@ Spotlight.defaultProps = {
   usePercentage: false,
   borderWidth: 0,
   borderColor: 'white',
-  animSpeed: 500
+  animSpeed: 500,
+  zIndex: 999
 };

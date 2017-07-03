@@ -28,7 +28,7 @@ class App extends Component {
           <div className="maxwidth-wrapper github-bar-content">
             <code className="snippet">npm install react-spotlight</code>
             <span>or</span>
-            <a className="link-view-docs" href="https://github.com/MatisLepik/react-spotlight">View docs on GitHub</a>
+            <a className="link-view-docs" style={{ zIndex: '999' }} href="https://github.com/MatisLepik/react-spotlight">View docs on GitHub</a>
           </div>
         </div>
 

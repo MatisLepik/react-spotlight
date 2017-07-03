@@ -70,7 +70,8 @@ export default class Demo extends React.Component {
                 responsive
                 animSpeed={1000}
                 borderColor={this.state.borderColor}
-                borderWidth={10}>
+                borderWidth={10}
+                zIndex={0}>
                 <div style={{
                   position: 'absolute',
                   left: '50%',
