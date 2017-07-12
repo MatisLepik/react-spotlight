@@ -29,8 +29,5 @@
             "objectLiteralDuplicateProperties": false,
             "jsx": true
         }
-    },
-    "ecmaFeatures": {
-        "jsx": true
     }
 }
