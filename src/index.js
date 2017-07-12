@@ -60,7 +60,7 @@ export default class Spotlight extends React.Component {
   }
 
   getInnerStyles() {
-    const { animSpeed, radius, borderWidth, color } = this.props;
+    const { animSpeed, radius, borderWidth, color, innerStyles } = this.props;
     const diameter = radius * 2 + (borderWidth * 2);
 
     return {
@@ -75,12 +75,13 @@ export default class Spotlight extends React.Component {
       borderRadius: '50%',
       boxSizing: 'content-box',
       transitionDuration: `${animSpeed}ms`,
-      transitionProperty: 'all'
+      transitionProperty: 'all',
+      ...innerStyles
     };
   }
 
   getOuterStyles() {
-    const { animSpeed, borderWidth, borderColor, radius, zIndex } = this.props;
+    const { animSpeed, borderWidth, borderColor, radius, outerStyles } = this.props;
     const diameter = radius * 2;
 
     return {
@@ -90,12 +91,13 @@ export default class Spotlight extends React.Component {
       width: diameter,
       height: diameter,
       borderRadius: '50%',
-      zIndex: zIndex,
+      zIndex: 999,
       boxSizing: 'content-box',
       border: `${borderWidth}px solid ${borderColor}`,
       transform: `translate(${this.getX()}, ${this.getY()})`,
       transitionDuration: `${animSpeed}ms`,
-      transitionProperty: 'all'
+      transitionProperty: 'all',
+      ...outerStyles
     };
   }
 
@@ -119,11 +121,12 @@ Spotlight.propTypes = {
   responsive: PropTypes.bool,
   outerClass: PropTypes.string,
   innerClass: PropTypes.string,
+  outerStyles: PropTypes.object,
+  innerStyles: PropTypes.object,
   borderWidth: PropTypes.number,
   borderColor: PropTypes.string,
   animSpeed: PropTypes.number,
   usePercentage: PropTypes.bool,
-  zIndex: PropTypes.number
 };
 
 Spotlight.defaultProps = {
@@ -136,5 +139,6 @@ Spotlight.defaultProps = {
   borderWidth: 0,
   borderColor: 'white',
   animSpeed: 500,
-  zIndex: 999
+  outerStyles: {},
+  innerStyles: {},
 };

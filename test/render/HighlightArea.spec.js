@@ -57,4 +57,14 @@ describe('Spotlight', () => {
     window.innerWidth = originalWindowSize.w;
     window.innerHeight = originalWindowSize.h;
   });
+
+
+  it('Should pass through inner/outerStyles', () => {
+    const component = TestUtils.renderIntoDocument( <Spotlight outerClass="outer" innerClass="inner" outerStyles={{ zIndex: 123 }} innerStyles={{ zIndex: 456 }} /> );
+    const outer = TestUtils.findRenderedDOMComponentWithClass(component, 'outer');
+    const inner = outer.querySelector('.inner');
+
+    expect(outer.style.zIndex).toBe('123');
+    expect(inner.style.zIndex).toBe('456');
+  });
 });
