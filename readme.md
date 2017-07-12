@@ -70,9 +70,9 @@ You can change the `x` / `y` / `color` / `borderColor` variables dynamically and
 |borderColor (*string*) = 'white'|Color of the circle's border|
 |borderWidth (*number*) = 0|Width of the circle's border|
 |responsive (*boolean*) = true|Certain values depend on cached viewport size for performance, so we listen to a (throttled) resize event to recalculate values. Turning this off might result in buggy behaviour if the screen is resized.|
-|outerClass|Class name for the outer container. Useful if you want to customize the visuals of the spotlight. Be careful - these can override styles that are necessary to make the visuals work.|
+|outerClass|Class name for the outer container|
 |innerClass|Class name for the inner container|
-|outerStyles|Styles for the outer container|
+|outerStyles|Styles for the outer container. Useful if you want to customize the visuals of the spotlight. Be careful - these can override styles that are necessary to make the visuals work.|
 |innerStyles|Styles for the inner container|
 |children|You can render children into the inner container, but you will have to position them yourself.|
 
