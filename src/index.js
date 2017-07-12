@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Spotlight extends React.Component {
 
@@ -79,7 +80,7 @@ export default class Spotlight extends React.Component {
   }
 
   getOuterStyles() {
-    const { animSpeed, borderWidth, borderColor, radius } = this.props;
+    const { animSpeed, borderWidth, borderColor, radius, zIndex } = this.props;
     const diameter = radius * 2;
 
     return {
@@ -89,7 +90,7 @@ export default class Spotlight extends React.Component {
       width: diameter,
       height: diameter,
       borderRadius: '50%',
-      zIndex: 999,
+      zIndex: zIndex,
       boxSizing: 'content-box',
       border: `${borderWidth}px solid ${borderColor}`,
       transform: `translate(${this.getX()}, ${this.getY()})`,
@@ -111,17 +112,18 @@ export default class Spotlight extends React.Component {
 }
 
 Spotlight.propTypes = {
-  color: React.PropTypes.string,
-  x: React.PropTypes.number,
-  y: React.PropTypes.number,
-  radius: React.PropTypes.number,
-  responsive: React.PropTypes.bool,
-  outerClass: React.PropTypes.string,
-  innerClass: React.PropTypes.string,
-  borderWidth: React.PropTypes.number,
-  borderColor: React.PropTypes.string,
-  animSpeed: React.PropTypes.number,
-  usePercentage: React.PropTypes.bool
+  color: PropTypes.string,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  radius: PropTypes.number,
+  responsive: PropTypes.bool,
+  outerClass: PropTypes.string,
+  innerClass: PropTypes.string,
+  borderWidth: PropTypes.number,
+  borderColor: PropTypes.string,
+  animSpeed: PropTypes.number,
+  usePercentage: PropTypes.bool,
+  zIndex: PropTypes.number
 };
 
 Spotlight.defaultProps = {
@@ -133,5 +135,6 @@ Spotlight.defaultProps = {
   usePercentage: false,
   borderWidth: 0,
   borderColor: 'white',
-  animSpeed: 500
+  animSpeed: 500,
+  zIndex: 999
 };
