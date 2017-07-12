@@ -67,6 +67,7 @@ export default class Demo extends React.Component {
                 y={this.state.y}
                 radius={this.state.radius}
                 color={this.state.color}
+                outerStyles={{ zIndex: 0 }}
                 responsive
                 animSpeed={1000}
                 borderColor={this.state.borderColor}
