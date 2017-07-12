@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class Spotlight extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -10,14 +9,15 @@ export default class Spotlight extends React.Component {
     // If the user has server rendering, we assume they have a 4k screen (better aim high than low just in case).
     this.state = {
       windowWidth: isServerSide ? 3840 : window.innerWidth,
-      windowHeight: isServerSide ? 2160 : window.innerHeight
+      windowHeight: isServerSide ? 2160 : window.innerHeight,
     };
 
     this.resizeThrottler = this.resizeThrottler.bind(this);
   }
 
   componentDidMount() {
-    if (this.props.responsive) window.addEventListener('resize', this.resizeThrottler);
+    if (this.props.responsive)
+      window.addEventListener('resize', this.resizeThrottler);
   }
 
   componentWillUnmount() {
@@ -38,30 +38,39 @@ export default class Spotlight extends React.Component {
   recalc() {
     this.setState({
       windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight
+      windowHeight: window.innerHeight,
     });
   }
 
   getBorderSize() {
     // We find the diagonal of the screen and add the circle's radius to ensure
     // that the border covers the screen when the circle is just off screen.
-    const diagonal = Math.ceil(Math.sqrt(Math.pow(this.state.windowWidth, 2) + Math.pow(this.state.windowHeight, 2)));
+    const diagonal = Math.ceil(
+      Math.sqrt(
+        Math.pow(this.state.windowWidth, 2) +
+          Math.pow(this.state.windowHeight, 2)
+      )
+    );
     return diagonal + this.props.radius;
   }
 
   getX() {
-    const pos = this.props.usePercentage ? this.state.windowWidth * this.props.x / 100 : this.props.x;
+    const pos = this.props.usePercentage
+      ? this.state.windowWidth * this.props.x / 100
+      : this.props.x;
     return `${pos}px`;
   }
 
   getY() {
-    const pos = this.props.usePercentage ? this.state.windowHeight * this.props.y / 100 : this.props.y;
+    const pos = this.props.usePercentage
+      ? this.state.windowHeight * this.props.y / 100
+      : this.props.y;
     return `${pos}px`;
   }
 
   getInnerStyles() {
     const { animSpeed, radius, borderWidth, color, innerStyles } = this.props;
-    const diameter = radius * 2 + (borderWidth * 2);
+    const diameter = radius * 2 + borderWidth * 2;
 
     return {
       position: 'absolute',
@@ -76,12 +85,18 @@ export default class Spotlight extends React.Component {
       boxSizing: 'content-box',
       transitionDuration: `${animSpeed}ms`,
       transitionProperty: 'all',
-      ...innerStyles
+      ...innerStyles,
     };
   }
 
   getOuterStyles() {
-    const { animSpeed, borderWidth, borderColor, radius, outerStyles } = this.props;
+    const {
+      animSpeed,
+      borderWidth,
+      borderColor,
+      radius,
+      outerStyles,
+    } = this.props;
     const diameter = radius * 2;
 
     return {
@@ -97,15 +112,20 @@ export default class Spotlight extends React.Component {
       transform: `translate(${this.getX()}, ${this.getY()})`,
       transitionDuration: `${animSpeed}ms`,
       transitionProperty: 'all',
-      ...outerStyles
+      ...outerStyles,
     };
   }
 
   render() {
-
     return (
-      <div style={this.getOuterStyles()} className={this.props.outerClass || ''}>
-        <div style={this.getInnerStyles()} className={this.props.innerClass || ''}>
+      <div
+        style={this.getOuterStyles()}
+        className={this.props.outerClass || ''}
+      >
+        <div
+          style={this.getInnerStyles()}
+          className={this.props.innerClass || ''}
+        >
           {this.props.children}
         </div>
       </div>

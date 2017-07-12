@@ -6,13 +6,18 @@ import TestUtils from 'react-dom/test-utils';
 
 describe('Spotlight', () => {
   it('Should render without blowing up', () => {
-    const component = TestUtils.renderIntoDocument( <Spotlight /> );
+    const component = TestUtils.renderIntoDocument(<Spotlight />);
     expect(component).toExist();
   });
 
   it('Should add correct classes and styles', () => {
-    const component = TestUtils.renderIntoDocument( <Spotlight outerClass="outer" innerClass="inner" /> );
-    const outer = TestUtils.findRenderedDOMComponentWithClass(component, 'outer');
+    const component = TestUtils.renderIntoDocument(
+      <Spotlight outerClass="outer" innerClass="inner" />
+    );
+    const outer = TestUtils.findRenderedDOMComponentWithClass(
+      component,
+      'outer'
+    );
     const inner = outer.querySelector('.inner');
 
     expect(outer).toExist();
@@ -33,10 +38,20 @@ describe('Spotlight', () => {
     window.innerWidth = 1920;
     window.innerHeight = 1080;
 
-    const component1 = TestUtils.renderIntoDocument( <Spotlight radius={150} outerClass="outer" innerClass="inner" /> );
-    const component2 = TestUtils.renderIntoDocument( <Spotlight radius={25} outerClass="outer" innerClass="inner" /> );
-    const inner1 = TestUtils.findRenderedDOMComponentWithClass(component1, 'inner');
-    const inner2 = TestUtils.findRenderedDOMComponentWithClass(component2, 'inner');
+    const component1 = TestUtils.renderIntoDocument(
+      <Spotlight radius={150} outerClass="outer" innerClass="inner" />
+    );
+    const component2 = TestUtils.renderIntoDocument(
+      <Spotlight radius={25} outerClass="outer" innerClass="inner" />
+    );
+    const inner1 = TestUtils.findRenderedDOMComponentWithClass(
+      component1,
+      'inner'
+    );
+    const inner2 = TestUtils.findRenderedDOMComponentWithClass(
+      component2,
+      'inner'
+    );
 
     expect(inner1.style.borderWidth).toBe('2353px');
     expect(inner2.style.borderWidth).toBe('2228px');
@@ -45,10 +60,20 @@ describe('Spotlight', () => {
     window.innerWidth = 800;
     window.innerHeight = 600;
 
-    const component3 = TestUtils.renderIntoDocument( <Spotlight radius={150} outerClass="outer" innerClass="inner" /> );
-    const component4 = TestUtils.renderIntoDocument( <Spotlight radius={25} outerClass="outer" innerClass="inner" /> );
-    const inner3 = TestUtils.findRenderedDOMComponentWithClass(component3, 'inner');
-    const inner4 = TestUtils.findRenderedDOMComponentWithClass(component4, 'inner');
+    const component3 = TestUtils.renderIntoDocument(
+      <Spotlight radius={150} outerClass="outer" innerClass="inner" />
+    );
+    const component4 = TestUtils.renderIntoDocument(
+      <Spotlight radius={25} outerClass="outer" innerClass="inner" />
+    );
+    const inner3 = TestUtils.findRenderedDOMComponentWithClass(
+      component3,
+      'inner'
+    );
+    const inner4 = TestUtils.findRenderedDOMComponentWithClass(
+      component4,
+      'inner'
+    );
 
     expect(inner3.style.borderWidth).toBe('1150px');
     expect(inner4.style.borderWidth).toBe('1025px');
@@ -58,10 +83,19 @@ describe('Spotlight', () => {
     window.innerHeight = originalWindowSize.h;
   });
 
-
   it('Should pass through inner/outerStyles', () => {
-    const component = TestUtils.renderIntoDocument( <Spotlight outerClass="outer" innerClass="inner" outerStyles={{ zIndex: 123 }} innerStyles={{ zIndex: 456 }} /> );
-    const outer = TestUtils.findRenderedDOMComponentWithClass(component, 'outer');
+    const component = TestUtils.renderIntoDocument(
+      <Spotlight
+        outerClass="outer"
+        innerClass="inner"
+        outerStyles={{ zIndex: 123 }}
+        innerStyles={{ zIndex: 456 }}
+      />
+    );
+    const outer = TestUtils.findRenderedDOMComponentWithClass(
+      component,
+      'outer'
+    );
     const inner = outer.querySelector('.inner');
 
     expect(outer.style.zIndex).toBe('123');

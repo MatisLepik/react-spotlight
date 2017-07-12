@@ -9,7 +9,8 @@
     "lint": "eslint -c .eslintrc src; exit 0",
     "prepublish": "npm run build",
     "test": "jest",
-    "coverage": "npm run build && istanbul cover node_modules/.bin/_mocha -- 'test/**/*.spec.js'"
+    "coverage": "npm run build && istanbul cover node_modules/.bin/_mocha -- 'test/**/*.spec.js'",
+    "format": "prettier --single-quote --trailing-comma es5 --write --print-width 80 \"{src,test}/**/*.js\" "
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "eslint-plugin-react": "^7.1.0",
     "expect": "^1.20.2",
     "jest": "^20.0.4",
+    "prettier": "^1.5.2",
     "react": "^15.6.1",
     "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
